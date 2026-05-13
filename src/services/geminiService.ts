@@ -1,8 +1,8 @@
-import { GoogleGenAI, Type } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { UserResponse, GovernanceReport } from "../types";
 
 export class GeminiService {
-  private ai: GoogleGenAI;
+  private ai: GoogleGenerativeAI;
 
   constructor() {
     this.ai = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY as string);
