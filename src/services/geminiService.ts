@@ -5,7 +5,7 @@ export class GeminiService {
   private ai: GoogleGenAI;
 
   constructor() {
-    this.ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
+    this.ai = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY as string);
   }
 
   async generateInsight(question: string, answer: string): Promise<string> {
