@@ -14,10 +14,21 @@ export class GeminiService {
       Question: ${question}
       User Response: ${answer}
 
-      Focus on flagging potential gaps or regulatory "hot spots" (e.g., GDPR, EU AI Act, biometric sensitivity). 
+      Focus on flagging potential gaps or regulatory "hot spots" (e.g., GDPR, EU AI Act, biometric sensitivity).
       Keep it concise (1-3 sentences) and authoritative.
       Do NOT use italics or bold in the response text itself.
     `;
+
+    try {
+      const model = this.ai.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      return response.text();
+    } catch (error) {
+      console.error("Gemini Error:", error);
+      return "Unable to analyze response for insights.";
+    }
+  }
 
     try {
       const response = await this.ai.models.generateContent({
