@@ -28,7 +28,7 @@ export class GeminiService {
       console.error("Gemini Error:", error);
       return "Unable to analyze response for insights.";
     }
-  }
+  
 
     try {
       const response = await this.ai.models.generateContent({
