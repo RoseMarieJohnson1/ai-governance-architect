@@ -14,3 +14,14 @@
 .font-serif {
   font-family: 'Georgia', serif;
 }
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  color: #E4E3E0; /* This ensures your text isn't black-on-black */
+}
