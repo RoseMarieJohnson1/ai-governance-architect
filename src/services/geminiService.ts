@@ -20,7 +20,7 @@ export class GeminiService {
     `;
 
     try {
-      const model = this.ai.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+      const model = this.ai.getGenerativeModel({ model: "gemini-3-flash-preview" });
       const result = await model.generateContent(prompt);
       const response = await result.response;
       return response.text();
