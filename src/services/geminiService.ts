@@ -21,7 +21,7 @@ export class GeminiService {
 
     try {
       const response = await this.ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-1.5-flash",
         contents: prompt,
       });
       return response.text || "Insight could not be generated at this time.";
